@@ -21,6 +21,7 @@ import {
 } from '../constants/userConstants'
 
 //LOGIN
+const url = 'https://shop-it-ecommerce.herokuapp.com'
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({type: LOGIN_REQUEST})
@@ -30,7 +31,7 @@ export const login = (email, password) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/login', {email, password}, config)
+        const { data } = await axios.post(`${url}/api/v1/login`, {email, password}, config)
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -57,7 +58,7 @@ export const updateProfile = (userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.put('/api/v1/me/update', userData, config)
+        const { data } = await axios.put(`${url}/api/v1/me/update`, userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -78,7 +79,7 @@ export const loadUser = () => async (dispatch) => {
 
         dispatch({ type: LOAD_USER_REQUEST })
 
-        const { data } = await axios.get('/api/v1/me')
+        const { data } = await axios.get(`${url}/api/v1/me`)
 
         dispatch({
             type: LOAD_USER_SUCCESS,
@@ -105,7 +106,7 @@ export const register = (userData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/register', userData, config)
+        const { data } = await axios.post(`${url}/api/v1/register`, userData, config)
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -132,7 +133,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('/api/v1/password/update', passwords, config)
+        const { data } = await axios.post(`${url}/api/v1/password/update`, passwords, config)
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
@@ -151,7 +152,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     try {
 
-        await axios.get('/api/v1/logout')
+        await axios.get(`${url}/api/v1/logout`)
 
         dispatch({
             type: LOGOUT_SUCCESS,

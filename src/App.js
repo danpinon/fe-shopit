@@ -14,7 +14,10 @@ import ProtectedRoute from './components/route/ProtectedRoute'
 import UpdateProfile from './components/user/UpdateProfile';
 import UpdatePassword from './components/user/UpdatePassword'
 
+
+
 function App() {
+
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
