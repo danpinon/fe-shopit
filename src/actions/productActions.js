@@ -11,7 +11,7 @@ import {
     CLEAR_ERRORS
 
 } from '../constants/productConstants'
-const url = 'https://shop-it-ecommerce.herokuapp.com'
+const url = 'https://be-shopit.herokuapp.com'
 export const getProducts = (keyword = '', currentPage = 1, price, category, ratings = 0) => async (dispatch) => {
     try {
 

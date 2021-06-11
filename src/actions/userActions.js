@@ -21,7 +21,7 @@ import {
 } from '../constants/userConstants'
 
 //LOGIN
-const url = 'https://shop-it-ecommerce.herokuapp.com'
+const url = 'https://be-shopit.herokuapp.com'
 export const login = (email, password) => async (dispatch) => {
     try {
         dispatch({type: LOGIN_REQUEST})
